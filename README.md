@@ -1,7 +1,7 @@
 # Plasmodium_ERS_2023
 Scripts for my research on Ectopic Recombination of Subtelomeres in Plasmodium
 
-- cand_cent.py
+- cand_cent.py:
 Analyzes all the chromosome sequences of a species with the sliding window method to evaluate the GC content.
 Then, it retrieves a list of the largest chromosomal regions exhibiting the highest AT content (potential candidate centromeres for a species). 
 How to run: python3 cand_cent.py genome_file
@@ -9,7 +9,7 @@ Genome_file example: Pf3D_genome.fasta
 Output example: Pf3D_cent.fast
 If you want to analyze multiple species at once, run: loop_cand_cent.py (see script for more details)
 
-- get_young_regions.rb
+- get_young_regions.rb:
 Retrieves the subtelomeric and internal young regions (unrefined)
 To get subtelomeric young regions: Choose telomere window
 To get internal young regions: Choose internal window
@@ -18,7 +18,7 @@ Input file format: based on Pf3D_freqs4maps.csv (example included) obtained with
 Input file with information of the presence of gene families per chromosome intervals
 In this file, a gene family is considered present if it is found in more than 0.25 minor clades per major clade (1 for presence, 0 for absence)
 
-- modify_young_regions.py
+- modify_young_regions.py:
 Filters, selects and refines subtelomeric and internal young regions based on established maximum and minimum lenght.
 How to run: python3 modify_young_regions.py ysFile yiFile newysFile newyiFile
 ysFile: File with chromosome number and subtelomeric young regions (a chromosome per row)
@@ -28,7 +28,7 @@ Example of input files: Pf3D_ysfile.txt and Pf3D_yifile.txt
 Example of output: Pf3D_ysfile_new.txt and Pf3D_yifile_new.txt
 If you want to analyze multiple species at once, run: loop_myr.py (see script for more details)
 
-- young_genes.py
+- young_genes.py:
 Retrieves a list of genes classified in chromosomic regions (conserved, subtelomeric, internal)
 Subtelomeric regions are divided in right (RSUBTEL) and left (LSUBTEL)
 How to run: python3 young_genes.py ysFile yiFile mapFile OGFile yrFile
@@ -39,7 +39,7 @@ yrFile: Output file
 Input and Output (1 & 2) examples in folder "ExamplesYoungGenes"
 If you want to analyze multiple species at once, run: loop_young_genes.py (see script for more details)
 
-- countOGs.py
+- countOGs.py:
 Analyzes all gene families (OGs) of a species a retrieves a list of OGs in young regions (1 OG per row)
 It also specifies the number of sequences per type of young region for each gene family
 and organizes them from the highest to the lowest based on the number of sequences in young regions
@@ -49,7 +49,7 @@ Output files: Pf3D_allOGs.txt (list of all OGs) and Pf3D_tenOGs.txt (list of top
 Input and output examples in folder “ExamplesCountOGs”
 If you want to analyze multiple species at once, run: loop_countOGs.py (see script for more details)
 
-- countAllOGs.py
+- countAllOGs.py:
 Retrieves the top 10 OGs with highest number of seqs in young regions
 It also specifies the number of sequences per type of chromosomic region (CONSERV, RSUBTEL, LSUBTEL, INTERN)
 How to run: python3 countOGs.py Pf3D_allgenes.txt Pf3D_tenOGs.txt Pf3D_tenOGs_fullnames.txt Pf3D_tenOGs_nonames.txt
@@ -58,7 +58,7 @@ Output files: Pf3D_tenOGs_fullnames.txt (with name of regions) Pf3D_tenOGs_nonam
 Input and output examples in folder "ExamplesCountAllOGs"
 If you want to analyze multiple species at once, run: loop_countAllOGs.py (see script for more details)
 
-- genes_function.py
+- genes_function.py:
 Retrieves a gene list (one sequence per row) with region category (CONSERV, RSUBTEL, LSUBTEL, INTERN) and protein info (product name).
 How to run: python3 young_genes.py ysFile yiFile mapFile ogFile gfFile newFile
 ysFile and yiFile: Files with subtelomeric and internal young regions list, respectively
